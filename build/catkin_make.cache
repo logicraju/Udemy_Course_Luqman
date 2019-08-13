@@ -1,0 +1,2 @@
+custom_bot
+-DCATKIN_DEVEL_PREFIX=/home/rajesh/Udemy_Course_Luqman/devel -DCMAKE_INSTALL_PREFIX=/home/rajesh/Udemy_Course_Luqman/install -G Unix Makefiles
