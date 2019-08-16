@@ -8,7 +8,7 @@
                 <box size = "0.5 0.3 0.1"/>
             </geometry>
             <material name = "chassis">
-                <color rgba = "1 0 0 1"/>
+                <!--color rgba = "1 0 0 1"/-->
             </material>
         </visual>
         <collision>
@@ -17,8 +17,8 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value = "0.1"/>
-            <inertia ixx = "0.05" ixy = "0.05" ixz = "0.05", iyy = "0.0", iyz = "0.0", izz = "0.0"/> 
+            <mass value = "2"/>
+            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005" iyy = "0.01" iyz = "0.01" izz = "0.01"/> 
         </inertial>
     </link>
 
@@ -29,7 +29,9 @@
                 <sphere radius = "0.05"/>
             </geometry>
             <material name = "caster">
-                <color rgba = "0 0 1 1"/>
+                <ambient>0 0 1 1</ambient>
+                <diffuse>0 0 0 1</diffuse>
+                <!--color rgba = "0 0 1 1"/-->
             </material>
         </visual>
         <collision>
@@ -39,14 +41,14 @@
         </collision>
         <inertial>
             <mass value = "0.1"/>
-            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005", iyy = "0.0", iyz = "0.0", izz = "0.0"/> 
+            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005" iyy = "0.01" iyz = "0.01" izz = "0.01"/> 
         </inertial>
     </link>
     <joint name = "caster_joint" type = "continuous">
         <axis xyz = "1 1 1"/>
         <parent link = "base_link"/>
         <child link = "caster_wheel"/>
-        <origin xyz = "0.2 0 -0.05" rpy = "1.57 0 0"/>
+        <origin xyz = "0.2 0 -0.025" rpy = "1.57 0 0"/>
     </joint>
 
     <!--LEFT WHEEL-->
@@ -56,7 +58,9 @@
                 <cylinder radius="0.075" length="0.025"/>
             </geometry>
             <material name = "left_wheel">
-                <color rgba = "0 1 0 1"/>
+                <ambient>0 1 0 1</ambient>
+                <diffuse>0 0 0 1</diffuse>
+                <!--color rgba = "0 1 0 1"/-->
             </material>
         </visual>
         <collision>
@@ -65,15 +69,15 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value = "0.1"/>
-            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005", iyy = "0.0", iyz = "0.0", izz = "0.0"/> 
+            <mass value = "1"/>
+            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005" iyy = "0.01" iyz = "0.01" izz = "0.01"/> 
         </inertial>
     </link>
     <joint name = "left_wheel_joint" type = "continuous">
         <axis xyz = "0 0 1"/>
         <parent link = "base_link"/>
         <child link = "left_wheel"/>
-        <origin xyz = "-0.2 -0.1625 0" rpy = "1.5707 0 0"/>
+        <origin xyz = "-0.2 -0.1624 0" rpy = "1.5707 0 0"/>
     </joint>
 
     <!--RIGHT WHEEL-->
@@ -83,7 +87,9 @@
                 <cylinder radius="0.075" length="0.025"/>
             </geometry>
             <material name = "right_wheel">
-                <color rgba = "0 1 0 1"/>
+                <ambient>0 1 0 1</ambient>
+                <diffuse>0 0 0 1</diffuse>
+                <!--color rgba = "0 1 0 1"/-->
             </material>
         </visual>
         <collision>
@@ -92,14 +98,44 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value = "0.1"/>
-            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005", iyy = "0.0", iyz = "0.0", izz = "0.0"/> 
+            <mass value = "1"/>
+            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005" iyy = "0.01" iyz = "0.01" izz = "0.01"/> 
         </inertial>
     </link>
     <joint name = "right_wheel_joint" type = "continuous">
         <axis xyz = "0 0 1"/>
         <parent link = "base_link"/>
         <child link = "right_wheel"/>
-        <origin xyz = "-0.2 0.1625 0" rpy = "-1.5707 0 0"/>
+        <origin xyz = "-0.2 0.1624 0" rpy = "-1.5707 0 0"/>
     </joint>
+
+    <!--GAZEBO COLOURS-->
+    <gazebo reference = "base_link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo reference = "caster_wheel">
+        <material>Gazebo/Green</material>
+    </gazebo>
+
+    <gazebo reference = "left_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <gazebo reference = "right_wheel">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!--DIFFERENTIAL DRIVE CONTROLLER PLUGIN-->
+    <gazebo>
+        <plugin name = "differential_drive_controller" filename = "libgazebo_ros_diff_drive.so">
+            <legacyMode>false</legacyMode>
+            <leftJoint> left_wheel_joint </leftJoint>
+            <rightJoint> right_wheel_joint </rightJoint>
+            <robotBaseFrame> base_link </robotBaseFrame>
+            <wheelSeperation> 0.3248 </wheelSeperation>
+            <wheelDiameter> 0.15 </wheelDiameter>
+            <publishWheelJointState> true </publishWheelJointState>
+        </plugin>
+    </gazebo>
 </robot>
