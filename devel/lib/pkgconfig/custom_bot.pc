@@ -1,8 +1,8 @@
-prefix=/home/rajesh/Udemy_Course_Luqman/devel
+prefix=/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/devel
 
 Name: custom_bot
 Description: Description of custom_bot
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/rajesh/Udemy_Course_Luqman/devel/lib 
+Libs: -L/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/devel/lib 
 Requires: 

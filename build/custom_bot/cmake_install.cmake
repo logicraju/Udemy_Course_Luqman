@@ -1,8 +1,8 @@
-# Install script for directory: /home/rajesh/Udemy_Course_Luqman/src/custom_bot
+# Install script for directory: /home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/src/custom_bot
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/rajesh/Udemy_Course_Luqman/install")
+  set(CMAKE_INSTALL_PREFIX "/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/rajesh/Udemy_Course_Luqman/build/custom_bot/catkin_generated/installspace/custom_bot.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/build/custom_bot/catkin_generated/installspace/custom_bot.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/custom_bot/cmake" TYPE FILE FILES
-    "/home/rajesh/Udemy_Course_Luqman/build/custom_bot/catkin_generated/installspace/custom_botConfig.cmake"
-    "/home/rajesh/Udemy_Course_Luqman/build/custom_bot/catkin_generated/installspace/custom_botConfig-version.cmake"
+    "/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/build/custom_bot/catkin_generated/installspace/custom_botConfig.cmake"
+    "/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/build/custom_bot/catkin_generated/installspace/custom_botConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/custom_bot" TYPE FILE FILES "/home/rajesh/Udemy_Course_Luqman/src/custom_bot/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/custom_bot" TYPE FILE FILES "/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/src/custom_bot/package.xml")
 endif()
 

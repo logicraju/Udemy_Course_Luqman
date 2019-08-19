@@ -17,8 +17,8 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value = "2"/>
-            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005" iyy = "0.01" iyz = "0.01" izz = "0.01"/> 
+            <mass value = "25"/>
+            <inertia ixx = "5.1458e-5" ixy = "5.1458e-5" ixz = "6.125e-5" iyy = "0.0" iyz = "0.0" izz = "0.0"/>
         </inertial>
     </link>
 
@@ -40,8 +40,8 @@
             </geometry>
         </collision>
         <inertial>
-            <mass value = "0.1"/>
-            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005" iyy = "0.01" iyz = "0.01" izz = "0.01"/> 
+            <mass value = "1"/>
+            <inertia ixx = "5.1458e-5" ixy = "5.1458e-5" ixz = "6.125e-5" iyy = "0.0" iyz = "0.0" izz = "0.0"/>
         </inertial>
     </link>
     <joint name = "caster_joint" type = "continuous">
@@ -70,7 +70,7 @@
         </collision>
         <inertial>
             <mass value = "1"/>
-            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005" iyy = "0.01" iyz = "0.01" izz = "0.01"/> 
+            <inertia ixx = "5.1458e-5" ixy = "5.1458e-5" ixz = "6.125e-5" iyy = "0.0" iyz = "0.0" izz = "0.0"/>
         </inertial>
     </link>
     <joint name = "left_wheel_joint" type = "continuous">
@@ -99,14 +99,14 @@
         </collision>
         <inertial>
             <mass value = "1"/>
-            <inertia ixx = "0.005" ixy = "0.005" ixz = "0.005" iyy = "0.01" iyz = "0.01" izz = "0.01"/> 
+            <inertia ixx = "5.1458e-5" ixy = "5.1458e-5" ixz = "6.125e-5" iyy = "0.0" iyz = "0.0" izz = "0.0"/>
         </inertial>
     </link>
     <joint name = "right_wheel_joint" type = "continuous">
         <axis xyz = "0 0 1"/>
         <parent link = "base_link"/>
         <child link = "right_wheel"/>
-        <origin xyz = "-0.2 0.1624 0" rpy = "-1.5707 0 0"/>
+        <origin xyz = "-0.2 0.1624 0" rpy = "1.5707 0 0"/>
     </joint>
 
     <!--GAZEBO COLOURS-->
@@ -127,15 +127,41 @@
     </gazebo>
 
     <!--DIFFERENTIAL DRIVE CONTROLLER PLUGIN-->
+    <!--transmission name="left_wheel_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <actuator name="left_wheel_actuator">
+            <mechanicalReduction>7</mechanicalReduction>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </actuator>
+        <joint name="left_wheel_joint">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+    </transmission>
+
+    <transmission name="right_wheel_transmission">
+        <type>transmission_interface/SimpleTransmission</type>
+        <actuator name="right_wheel_actuator">
+            <mechanicalReduction>7</mechanicalReduction>
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </actuator>
+        <joint name="right_wheel_joint">
+            <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+        </joint>
+    </transmission>
+
+    <gazebo>
+        <plugin name = "gazebo_ros_control" filename = "libgazebo_ros_control.so">
+            <legacyModeNS>true</legacyModeNS>
+        </plugin>
+    </gazebo-->
+
     <gazebo>
         <plugin name = "differential_drive_controller" filename = "libgazebo_ros_diff_drive.so">
-            <legacyMode>false</legacyMode>
-            <leftJoint> left_wheel_joint </leftJoint>
-            <rightJoint> right_wheel_joint </rightJoint>
-            <robotBaseFrame> base_link </robotBaseFrame>
-            <wheelSeperation> 0.3248 </wheelSeperation>
-            <wheelDiameter> 0.15 </wheelDiameter>
-            <publishWheelJointState> true </publishWheelJointState>
-        </plugin>
+        <leftJoint>left_wheel_joint</leftJoint>
+        <rightJoint>right_wheel_joint</rightJoint>
+        <robotBaseFrame></robotBaseFrame>
+        <wheelSeparation>0.3248</wheelSeparation>
+        <wheelDiameter>0.15</wheelDiameter>
+        <publishWheelJointState>true</publishWheelJointState>
     </gazebo>
 </robot>

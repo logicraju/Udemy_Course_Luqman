@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rajesh/Udemy_Course_Luqman/src
+CMAKE_SOURCE_DIR = /home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rajesh/Udemy_Course_Luqman/build
+CMAKE_BINARY_DIR = /home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ custom_bot/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_empty_exp
 .PHONY : custom_bot/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 custom_bot/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/rajesh/Udemy_Course_Luqman/build/custom_bot && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/build/custom_bot && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : custom_bot/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 custom_bot/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/rajesh/Udemy_Course_Luqman/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rajesh/Udemy_Course_Luqman/src /home/rajesh/Udemy_Course_Luqman/src/custom_bot /home/rajesh/Udemy_Course_Luqman/build /home/rajesh/Udemy_Course_Luqman/build/custom_bot /home/rajesh/Udemy_Course_Luqman/build/custom_bot/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/src /home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/src/custom_bot /home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/build /home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/build/custom_bot /home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/build/custom_bot/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : custom_bot/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

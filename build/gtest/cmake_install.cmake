@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/rajesh/Udemy_Course_Luqman/install")
+  set(CMAKE_INSTALL_PREFIX "/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/rajesh/Udemy_Course_Luqman/build/gtest/gtest/cmake_install.cmake")
+  include("/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/build/gtest/gtest/cmake_install.cmake")
 
 endif()
 
