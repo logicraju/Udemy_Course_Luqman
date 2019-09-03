@@ -19,9 +19,9 @@ flags = [
 '-isystem',
 '/opt/ros/' + os.getenv('ROS_DISTRO') + '/include',
 '-isystem',
-'/home/rajesh/Udemy_Course_Luqman/devel/include',
+'/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/devel/include',
 '-isystem',
-'/home/rajesh/Udemy_Course_Luqman/src/CMakeLists.txt/include'
+'/home/rajesh/ROS_Workspaces/Udemy_Course_Luqman/src/custom_bot/include'
 ]
 
 compilation_database_folder = ''

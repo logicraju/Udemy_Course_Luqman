@@ -157,11 +157,13 @@
 
     <gazebo>
         <plugin name = "differential_drive_controller" filename = "libgazebo_ros_diff_drive.so">
-        <leftJoint>left_wheel_joint</leftJoint>
-        <rightJoint>right_wheel_joint</rightJoint>
-        <robotBaseFrame></robotBaseFrame>
-        <wheelSeparation>0.3248</wheelSeparation>
-        <wheelDiameter>0.15</wheelDiameter>
-        <publishWheelJointState>true</publishWheelJointState>
+            <legacyModeNS>false</legacyModeNS>
+            <leftJoint>left_wheel_joint</leftJoint>
+            <rightJoint>right_wheel_joint</rightJoint>
+            <robotBaseFrame>base_link</robotBaseFrame>
+            <wheelSeparation>0.3248</wheelSeparation>
+            <wheelDiameter>0.15</wheelDiameter>
+            <publishWheelJointState>true</publishWheelJointState>
+        </plugin>
     </gazebo>
 </robot>
